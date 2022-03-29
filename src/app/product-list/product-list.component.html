@@ -1,0 +1,15 @@
+<div class="hives">
+    <div *ngFor="let hive of hives" [id]="hive.id" class="hive">
+        <h3>
+            <a [title]="hive.name + ' details'" [routerLink]="['./hives', hive.id]">
+                {{ hive.name }}
+            </a>
+        </h3>
+        <p *ngIf="hive.description">
+            {{ hive.description }}
+        </p>
+        <button type="button" (click)="share(hive)">Share 🖥️</button>
+        <app-product-alerts [hive]="hive" (notify)="onNotify()">
+        </app-product-alerts>
+    </div>
+</div>

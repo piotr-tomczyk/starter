@@ -1,0 +1,8 @@
+<h2>Hive Details</h2>
+<div *ngIf="hive">
+    <h3>{{hive.name}}</h3>
+    <h3>{{hive.numberOfBees}}</h3>
+    <p *ngIf="hive.description">
+        {{hive.description}}
+    </p>
+</div>
