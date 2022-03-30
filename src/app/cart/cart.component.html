@@ -5,4 +5,29 @@
         <span>Number of bees 🐝: {{item.numberOfBees}}</span>
     </div>
 </div>
-<button type="button"> <a routerLink="/shipping"> Shipping ✈️</a></button>
+<button> <a routerLink="/shipping"> ✈️ </a></button>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+        <div class="error" *ngIf="name?.errors?.['required']">
+            Name field is required.
+        </div>
+    </div>
+
+    <div>
+        <label for="address">
+            Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+        <div class="error" *ngIf="address?.errors?.['required']">
+            Address field is required.
+        </div>
+    </div>
+
+    <button class="button" type="submit">Purchase</button>
+
+</form>

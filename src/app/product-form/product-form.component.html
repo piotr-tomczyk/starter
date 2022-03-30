@@ -1,0 +1,36 @@
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="addForm">
+    <div>
+        <label for="name">
+            Name:
+        </label>
+        <input id="name" type="text" formControlName="name">
+        <div class="error" *ngIf="name?.errors?.['required']">
+            Name field is required.
+        </div>
+    </div>
+    <div>
+        <label for="numberOfBees">
+            Number Of Bees:
+        </label>
+        <input id="number" type="number" formControlName="numberOfBees">
+        <div class="error" *ngIf="numberOfBees?.errors?.['required']">
+            Number of Bees field is required.
+        </div>
+        <div class="error" *ngIf="numberOfBees?.errors?.['min']">
+            Value must be higher than 0.
+        </div>
+    </div>
+    <div>
+        <label for=" desciption">
+            Description:
+        </label>
+        <input id="desciption" type="text" formControlName="description">
+    </div>
+    <button class="button" type="submit"> Add Hive </button>
+    <p>
+        Real-time data: {{ addForm.value | json }}
+    </p>
+    <p>
+        Your form status is : {{ addForm.status }}
+    </p>
+</form>

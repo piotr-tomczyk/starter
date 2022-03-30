@@ -1,4 +1,4 @@
-<div class="hives">
+<div class="hives flex">
     <div *ngFor="let hive of hives" [id]="hive.id" class="hive">
         <h3>
             <a [title]="hive.name + ' details'" [routerLink]="['./hives', hive.id]">
@@ -8,8 +8,12 @@
         <p *ngIf="hive.description">
             {{ hive.description }}
         </p>
-        <button type="button" (click)="share(hive)">Share 🖥️</button>
+        <div class="flex">
+            <button type="button" (click)="share(hive)">Share 🖥️</button>
+            <button type="button" (click)="getHivesService().deleteHive(hive)"> Delete Me! 😥</button>
+        </div>
         <app-product-alerts [hive]="hive" (notify)="onNotify()">
         </app-product-alerts>
     </div>
+    <app-product-form></app-product-form>
 </div>
