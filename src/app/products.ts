@@ -15,7 +15,7 @@ export const hives = [
     {
         id: 2,
         name: "Peyvir's Hive",
-        numberOfBees: 42000,
+        numberOfBees: 42500,
         description: 'Tries to stab. 🔪'
     },
     {
