@@ -5,5 +5,8 @@
     <p *ngIf="hive.description">
         {{hive.description}}
     </p>
+    <div *ngIf="hive.id == 2">
+        <button type="button" (click)="addBees(hive)">+🐝</button>
+    </div>
     <button type="button" (click)="addToCart(hive)"> 🛒🛒🛒</button>
 </div>

@@ -26,4 +26,7 @@ export class ProductDetailsComponent implements OnInit {
     this.cartService.addToCart(hive);
     alert(`${hive.name} has been added to the cart!`);
   }
+  addBees(hive: Hive) {
+    hive.numberOfBees++;
+  }
 }
