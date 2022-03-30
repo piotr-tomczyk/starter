@@ -3,7 +3,7 @@ import { hives, Hive } from '../products';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss', '../app.component.scss']
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
   hives: Hive[] = hives;

@@ -1,0 +1,8 @@
+<h3>CART 🛒</h3>
+<div class="cart">
+    <div class="cart-item" *ngFor="let item of items">
+        <span> Hive: {{item.name}} </span>
+        <span>Number of bees 🐝: {{item.numberOfBees}}</span>
+    </div>
+</div>
+<button type="button"> <a routerLink="/shipping"> Shipping ✈️</a></button>
